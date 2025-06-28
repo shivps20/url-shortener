@@ -1,28 +1,36 @@
 # URL Shortener Architecture
 
+<details>
+  <summary>Technical Architecture Overview</summary>
 
-<details> <summary>Mermaid Code</summary>
+```mermaid
 graph TD
-    User[User / UI<br/>(Streamlit, Gradio, Postman, Browser)]
-    API[Spring Boot REST API<br/>UrlShortenerController]
-    Service[UrlShortenerService<br/>(Business Logic)]
-    Repo[UrlMappingRepository<br/>(Spring Data JPA)]
-    DB[(H2 / MySQL Database)]
-    Cache[(Optional: Redis Cache)]
-    Exception[GlobalExceptionHandler<br/>(@ControllerAdvice)]
 
-    User -->|HTTP Request| API
-    API -->|Calls| Service
-    Service -->|CRUD| Repo
-    Repo -->|JPA| DB
+User[User / UI]
+API[REST API Controller]
+Service[Service Layer]
+Repo[Repository Layer]
+DB[(Database)]
+Cache[(Redis Cache)]
+Exception[Exception Handler]
 
-    Service -->|Cache Lookup| Cache
-    Service -->|Cache Store| Cache
+User -->|HTTP Request| API
+API -->|Calls| Service
+Service -->|CRUD| Repo
+Repo -->|JPA| DB
 
-    API -->|Exception Handling| Exception
-    Service -->|Exception Handling| Exception
-    API -->|HTTP Response| User
+Service -->|Cache Lookup| Cache
+Service -->|Cache Store| Cache
+
+API -->|Exception Handling| Exception
+Service -->|Exception Handling| Exception
+API -->|HTTP Response| User
+
+
+```
+
 </details>
+
 
     
 
