@@ -20,7 +20,7 @@ This is a reliable and scalable URL shortener built using Java Spring Boot and H
 - Kubernetes (optional for deployment)
 
 ## Architecture
-See [`architecture.md`](architecture.md)
+See [`architecture.md`](urlshortener/architecture.md)
 
 ## Running Locally
 
