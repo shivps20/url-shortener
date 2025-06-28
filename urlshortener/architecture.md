@@ -1,6 +1,7 @@
 # URL Shortener Architecture
 
-```mermaid
+
+mermaid
 flowchart TD
     User[User / UI (Streamlit, Gradio, Postman, Browser)]
     API[Spring Boot REST API<br/>UrlShortenerController]
@@ -21,7 +22,7 @@ flowchart TD
     API -- Exception Handling --> Exception
     Service -- Exception Handling --> Exception
     API -- HTTP Response --> User
-```
+
 
 **Description:**
 - **User/UI**: Can be Streamlit, Gradio, Postman, or any HTTP client.
